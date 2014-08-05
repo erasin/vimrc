@@ -9,12 +9,58 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+
+Bundle 'gmarik/vundle'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'xuhdev/SingleCompile'
+Bundle 'vim-scripts/VisIncr'
+Bundle 'mileszs/ack.vim'
+Bundle 'epmatsw/ag.vim'
+Bundle 'vim-scripts/Align'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mattn/gist-vim'
+" Bundle 'golangtw/go.vim'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'rodjek/vim-puppet'
+Bundle 'hSATAC/rspec.vim'
+Bundle 'mhinz/vim-startify'
+Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-surround'
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'jgdavey/tslime.vim'
+Bundle 'mbbill/undotree'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'bling/vim-airline'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'Blackrush/vim-gocode'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'tpope/vim-rails'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+Bundle 'jgdavey/vim-turbux'
+Bundle 'guns/xterm-color-table.vim'
+
 "---------------------------------------------------------------------------
 " ENCODING SETTINGS
 "---------------------------------------------------------------------------
 
 set encoding=utf-8
-set fileencodings=utf-8,chinese,latin-1
+set fileencodings=utf-8,chinese,latin-1,cp936,euc-jp
 set fileencoding=utf-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim

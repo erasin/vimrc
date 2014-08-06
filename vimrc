@@ -9,52 +9,6 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" let Vundle manage Vundle
-
-Bundle 'gmarik/vundle'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'xuhdev/SingleCompile'
-Bundle 'vim-scripts/VisIncr'
-Bundle 'mileszs/ack.vim'
-Bundle 'epmatsw/ag.vim'
-Bundle 'vim-scripts/Align'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/gist-vim'
-" Bundle 'golangtw/go.vim'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'rodjek/vim-puppet'
-Bundle 'hSATAC/rspec.vim'
-Bundle 'mhinz/vim-startify'
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-surround'
-Bundle 'AndrewRadev/switch.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'tomtom/tlib_vim'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'mbbill/undotree'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'bling/vim-airline'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'tpope/vim-rails'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'jgdavey/vim-turbux'
-Bundle 'guns/xterm-color-table.vim'
-
 "---------------------------------------------------------------------------
 " ENCODING SETTINGS
 "---------------------------------------------------------------------------
@@ -285,6 +239,23 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     noremap  <C-u>5 yypVr^
     inoremap <C-u>5 <esc>yypVr^A
     "}
+
+    " Ctrl + S 保存文件
+    map  <C-s> <ESC>:w <CR>
+    imap <C-s> <ESC>:w <CR>
+    vmap <C-s> <ESC>:w <CR>
+
+    " Ctrl + C 选中状态下复制
+    vnoremap <C-c> "+y
+
+    " Ctrl + V 粘贴剪切板中的内容
+    map  <C-v> "+p
+    imap <C-v> <esc>"+pa
+    vmap <C-v> d"+P
+
+    " 内容全选快捷键
+    map <C-a> gg0vG$<cr>
+
 
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " RENAME CURRENT FILE

@@ -52,7 +52,7 @@ if has("gui_running")   " GUI color and font settings
     endif
     set t_Co=256          " 256 color mode
     set cursorline        " highlight current line
-    colors railscasts
+    colors wombat
     set background=dark
 else
     " terminal color settings

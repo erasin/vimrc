@@ -118,6 +118,8 @@ PLUGINS
 
 * [NerdCommenter](https://github.com/scrooloose/nerdcommenter): `<leader>cc` to comment, `<leader>cu` to uncomment. `<leader>c<space>` to toggle.
 
+* [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
+
 Other good references
 ---------------------
 

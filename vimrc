@@ -84,7 +84,7 @@ set t_vb=
 set tm=500
 
 " TAB setting{
-set expandtab        "replace <TAB> with spaces
+"set expandtab        "replace <TAB> with spaces
 set softtabstop=4
 set shiftwidth=4
 
@@ -113,6 +113,13 @@ endfunction
 
 "}
 
+" 文件类型
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.uml set filetype=plantuml
+autocmd BufRead,BufNewFile *.pu set filetype=plantuml
+
+" 将指定文件的换行符转换成 UNIX 格式
+au FileType php,javascript,html,css,python,vim,vimwiki set ff=unix
 
 " C/C++ specific settings
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
@@ -127,6 +134,7 @@ autocmd BufNewFile,BufRead *.eyaml set filetype=yaml
 autocmd BufNewFile,BufRead *.cap set filetype=ruby
 
 " Go
+autocmd BufNewFile,BufRead *.go set filetype=go
 au FileType go au BufWritePre <buffer> Fmt
 "au FileType go
     "\ set ts=2 | " Set tabs to 2 spaces
@@ -256,6 +264,10 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     " 内容全选快捷键
     map <C-a> gg0vG$<cr>
 
+    " 缩写时间
+    iab idate <c-r>=strftime("%Y-%m-%d")<CR>
+    iab itime <c-r>=strftime("%H:%M")<CR>
+    iab ifile <c-r>=expand("%:t")<CR>
 
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " RENAME CURRENT FILE
@@ -561,3 +573,6 @@ endfunction
 " --- easymotion
 hi EasyMotionTarget ctermbg=none ctermfg=green
 hi EasyMotionShade  ctermbg=none ctermfg=blue
+
+" --- emmet
+"let g:user_emmet_mode='a'
